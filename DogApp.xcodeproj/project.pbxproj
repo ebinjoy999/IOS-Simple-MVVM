@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		251E2CBF22E3CE530096FD22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CBE22E3CE530096FD22 /* AppDelegate.swift */; };
-		251E2CC122E3CE530096FD22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CC022E3CE530096FD22 /* ViewController.swift */; };
+		251E2CC122E3CE530096FD22 /* ViewControllerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CC022E3CE530096FD22 /* ViewControllerHome.swift */; };
 		251E2CC422E3CE530096FD22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251E2CC222E3CE530096FD22 /* Main.storyboard */; };
 		251E2CC622E3CE530096FD22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 251E2CC522E3CE530096FD22 /* Assets.xcassets */; };
 		251E2CC922E3CE530096FD22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251E2CC722E3CE530096FD22 /* LaunchScreen.storyboard */; };
 		251E2CD422E3CE530096FD22 /* DogAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CD322E3CE530096FD22 /* DogAppTests.swift */; };
 		251E2CDF22E3CE530096FD22 /* DogAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CDE22E3CE530096FD22 /* DogAppUITests.swift */; };
-		251E2CF422E3E41D0096FD22 /* ViewController_UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF322E3E41D0096FD22 /* ViewController_UITableViewDelegate.swift */; };
-		251E2CF622E3E43F0096FD22 /* ViewController_UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF522E3E43F0096FD22 /* ViewController_UITableViewDataSource.swift */; };
+		251E2CF422E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF322E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift */; };
+		251E2CF622E3E43F0096FD22 /* ViewControllerHome_UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF522E3E43F0096FD22 /* ViewControllerHome_UITableViewDataSource.swift */; };
 		251E2CF822E3E67D0096FD22 /* DogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF722E3E67D0096FD22 /* DogViewModel.swift */; };
 		251E2CFA22E3E6EB0096FD22 /* DogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF922E3E6EB0096FD22 /* DogList.swift */; };
 		251E2CFC22E3E6F80096FD22 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CFB22E3E6F80096FD22 /* Dog.swift */; };
 		251E2CFF22E414F20096FD22 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CFE22E414F20096FD22 /* AppConstant.swift */; };
+		251E2D0522E41D770096FD22 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D0422E41D770096FD22 /* BaseService.swift */; };
+		251E2D0722E41DAD0096FD22 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D0622E41DAD0096FD22 /* EndPoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +44,7 @@
 /* Begin PBXFileReference section */
 		251E2CBB22E3CE530096FD22 /* DogApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		251E2CBE22E3CE530096FD22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		251E2CC022E3CE530096FD22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		251E2CC022E3CE530096FD22 /* ViewControllerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome.swift; sourceTree = "<group>"; };
 		251E2CC322E3CE530096FD22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		251E2CC522E3CE530096FD22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		251E2CC822E3CE530096FD22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,12 +53,14 @@
 		251E2CD322E3CE530096FD22 /* DogAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAppTests.swift; sourceTree = "<group>"; };
 		251E2CDA22E3CE530096FD22 /* DogAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		251E2CDE22E3CE530096FD22 /* DogAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAppUITests.swift; sourceTree = "<group>"; };
-		251E2CF322E3E41D0096FD22 /* ViewController_UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_UITableViewDelegate.swift; sourceTree = "<group>"; };
-		251E2CF522E3E43F0096FD22 /* ViewController_UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_UITableViewDataSource.swift; sourceTree = "<group>"; };
+		251E2CF322E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome_UITableViewDelegate.swift; sourceTree = "<group>"; };
+		251E2CF522E3E43F0096FD22 /* ViewControllerHome_UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome_UITableViewDataSource.swift; sourceTree = "<group>"; };
 		251E2CF722E3E67D0096FD22 /* DogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewModel.swift; sourceTree = "<group>"; };
 		251E2CF922E3E6EB0096FD22 /* DogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogList.swift; sourceTree = "<group>"; };
 		251E2CFB22E3E6F80096FD22 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		251E2CFE22E414F20096FD22 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		251E2D0422E41D770096FD22 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		251E2D0622E41DAD0096FD22 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		251E2CBD22E3CE530096FD22 /* DogApp */ = {
 			isa = PBXGroup;
 			children = (
+				251E2D0322E41C260096FD22 /* Services */,
 				251E2CFD22E414D80096FD22 /* Common */,
 				251E2CF222E3D92B0096FD22 /* resources */,
 				251E2CF122E3D8E80096FD22 /* Controller */,
@@ -173,9 +178,9 @@
 		251E2CF122E3D8E80096FD22 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				251E2CC022E3CE530096FD22 /* ViewController.swift */,
-				251E2CF322E3E41D0096FD22 /* ViewController_UITableViewDelegate.swift */,
-				251E2CF522E3E43F0096FD22 /* ViewController_UITableViewDataSource.swift */,
+				251E2CC022E3CE530096FD22 /* ViewControllerHome.swift */,
+				251E2CF322E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift */,
+				251E2CF522E3E43F0096FD22 /* ViewControllerHome_UITableViewDataSource.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,6 +199,15 @@
 				251E2CFE22E414F20096FD22 /* AppConstant.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		251E2D0322E41C260096FD22 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				251E2D0422E41D770096FD22 /* BaseService.swift */,
+				251E2D0622E41DAD0096FD22 /* EndPoints.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,14 +341,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				251E2CC122E3CE530096FD22 /* ViewController.swift in Sources */,
+				251E2CC122E3CE530096FD22 /* ViewControllerHome.swift in Sources */,
 				251E2CFC22E3E6F80096FD22 /* Dog.swift in Sources */,
-				251E2CF422E3E41D0096FD22 /* ViewController_UITableViewDelegate.swift in Sources */,
+				251E2CF422E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift in Sources */,
 				251E2CFA22E3E6EB0096FD22 /* DogList.swift in Sources */,
 				251E2CF822E3E67D0096FD22 /* DogViewModel.swift in Sources */,
 				251E2CBF22E3CE530096FD22 /* AppDelegate.swift in Sources */,
-				251E2CF622E3E43F0096FD22 /* ViewController_UITableViewDataSource.swift in Sources */,
+				251E2D0722E41DAD0096FD22 /* EndPoints.swift in Sources */,
+				251E2CF622E3E43F0096FD22 /* ViewControllerHome_UITableViewDataSource.swift in Sources */,
 				251E2CFF22E414F20096FD22 /* AppConstant.swift in Sources */,
+				251E2D0522E41D770096FD22 /* BaseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

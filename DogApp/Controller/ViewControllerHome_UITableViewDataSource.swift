@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension ViewController: UITableViewDataSource {
+extension ViewControllerHome: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0

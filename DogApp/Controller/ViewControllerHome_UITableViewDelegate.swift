@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension ViewController: UITableViewDelegate{
+extension ViewControllerHome: UITableViewDelegate{
     
     private func tableView(_: UITableView, willDisplay: UITableViewCell, forRowAt: IndexPath){
         
