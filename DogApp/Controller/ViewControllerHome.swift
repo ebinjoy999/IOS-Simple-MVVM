@@ -17,6 +17,7 @@ class ViewControllerHome: UIViewController, DogViewModelDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         dogVIewModel = DogVIewModel()
+        dogVIewModel?.resetItem()
         dogVIewModel?.getDogList(type: .dogLIst)
         
         dogVIewModel?.delegate = self
@@ -43,6 +44,10 @@ class ViewControllerHome: UIViewController, DogViewModelDelegate {
     
     func showloading(_ isPagination: Bool) {
         myActivityIndicator!.startAnimating()
+    }
+    
+    func stopLoading(_ isPagination: Bool) {
+        myActivityIndicator!.stopAnimating()
     }
     
 

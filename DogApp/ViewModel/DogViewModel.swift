@@ -11,6 +11,7 @@ import Foundation
 protocol DogViewModelDelegate {
     func reloadDogList(type: ListType, page: Int)
     func showloading(_ isPagination :Bool)
+    func stopLoading(_ isPagination :Bool)
 }
 
 class DogVIewModel{
@@ -35,23 +36,26 @@ class DogVIewModel{
     func getDogList(type :ListType){
         guard let dogS = dogService else { return }
         if(!isLoading  && !dogS.isLoadedAllItem){
-            self.delegate?.showloading((CURRENT_PAGE == 0 ) ? true : false)
-            isLoading = true
             CURRENT_PAGE += 1
+            isLoading = true
+            self.delegate?.showloading((CURRENT_PAGE == 1 ) ? true : false)
             dogS.getDogList(listType: type, page: CURRENT_PAGE, completion: {
                 (response) in
                 switch response{
                 case .success(var result):
+                    if(result.dogs.count<AppConstant.PAGE_LIMIT){
+                        dogS.isLoadedAllItem = true
+                    }
                     self.dogs.append(contentsOf: result.dogs)
                     DispatchQueue.main.async {
                       self.delegate?.reloadDogList(type: result.type!, page: self.CURRENT_PAGE)
                     }
-                    self.isLoading = false
                     break
                 case .failure:
-                    self.isLoading = false
                     break
                 }
+                self.delegate?.stopLoading((self.CURRENT_PAGE == 1 ) ? true : false)
+                self.isLoading = false
             })
         }
     }

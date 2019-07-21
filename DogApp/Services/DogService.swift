@@ -18,7 +18,7 @@ class DogService: BaseService {
     
     func getDogList(listType: ListType, page:Int, completion: @escaping (DogDataResponse) -> Void ) {
         let endPoint = setEndPoint(type: listType)
-        callEndPoint(endPoint: endPoint.rawValue, method: "GET") { [weak self]
+        callEndPoint(page: page, endPoint: endPoint.rawValue, method: "GET") { [weak self]
             (response) in
             guard let strongSelf = self else {
                 return

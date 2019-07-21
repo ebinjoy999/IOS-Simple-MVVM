@@ -20,11 +20,11 @@ class BaseService{
     
     var uRLSessionArray: [String :URLSession] = [:]
     
-    func callEndPoint(endPoint: String, method: String, params: JsonDictionay? = [:], completion: @escaping (ServiceResponse) -> Void){
+    func callEndPoint(page :Int, endPoint: String, method: String, params: JsonDictionay? = [:], completion: @escaping (ServiceResponse) -> Void){
         var getURL = URLComponents(string: AppConstant.BASE_URL + endPoint)!
         getURL.queryItems = [
             URLQueryItem(name: "limit", value: String(AppConstant.PAGE_LIMIT)),
-            URLQueryItem(name: "page", value: String(1)),
+            URLQueryItem(name: "page", value: String(page)),
             URLQueryItem(name: "order", value: "Desc")
         ]
         var getRequest = URLRequest(url: getURL.url!)
