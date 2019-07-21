@@ -24,6 +24,8 @@
 		251E2D0722E41DAD0096FD22 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D0622E41DAD0096FD22 /* EndPoints.swift */; };
 		251E2D0A22E46D0D0096FD22 /* DogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D0922E46D0D0096FD22 /* DogService.swift */; };
 		251E2D0C22E46FAA0096FD22 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D0B22E46FAA0096FD22 /* BaseViewModel.swift */; };
+		25424D2422E4F0E70010FBB6 /* DogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25424D2322E4F0E70010FBB6 /* DogCell.swift */; };
+		25424D2622E503CC0010FBB6 /* ViewControllerHome_UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25424D2522E503CC0010FBB6 /* ViewControllerHome_UIScrollViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		251E2D0622E41DAD0096FD22 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		251E2D0922E46D0D0096FD22 /* DogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogService.swift; sourceTree = "<group>"; };
 		251E2D0B22E46FAA0096FD22 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		25424D2322E4F0E70010FBB6 /* DogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCell.swift; sourceTree = "<group>"; };
+		25424D2522E503CC0010FBB6 /* ViewControllerHome_UIScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome_UIScrollViewDelegate.swift; sourceTree = "<group>"; };
 		2596B78422E4C1D100BCB7B7 /* DogApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DogApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,9 +189,11 @@
 		251E2CF122E3D8E80096FD22 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				25424D2222E4F0D00010FBB6 /* Cell */,
 				251E2CC022E3CE530096FD22 /* ViewControllerHome.swift */,
 				251E2CF322E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift */,
 				251E2CF522E3E43F0096FD22 /* ViewControllerHome_UITableViewDataSource.swift */,
+				25424D2522E503CC0010FBB6 /* ViewControllerHome_UIScrollViewDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -224,6 +230,14 @@
 				251E2D0622E41DAD0096FD22 /* EndPoints.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		25424D2222E4F0D00010FBB6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				25424D2322E4F0E70010FBB6 /* DogCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25424D2422E4F0E70010FBB6 /* DogCell.swift in Sources */,
 				251E2CC122E3CE530096FD22 /* ViewControllerHome.swift in Sources */,
 				251E2CFC22E3E6F80096FD22 /* Dog.swift in Sources */,
 				251E2CF422E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift in Sources */,
@@ -369,6 +384,7 @@
 				251E2D0A22E46D0D0096FD22 /* DogService.swift in Sources */,
 				251E2D0C22E46FAA0096FD22 /* BaseViewModel.swift in Sources */,
 				251E2CF822E3E67D0096FD22 /* DogViewModel.swift in Sources */,
+				25424D2622E503CC0010FBB6 /* ViewControllerHome_UIScrollViewDelegate.swift in Sources */,
 				251E2CBF22E3CE530096FD22 /* AppDelegate.swift in Sources */,
 				251E2D0722E41DAD0096FD22 /* EndPoints.swift in Sources */,
 				251E2CF622E3E43F0096FD22 /* ViewControllerHome_UITableViewDataSource.swift in Sources */,

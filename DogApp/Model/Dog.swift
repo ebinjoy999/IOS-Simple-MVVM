@@ -8,8 +8,17 @@
 
 import Foundation
 
-struct Dog : Codable{
+
+struct Dog: Codable{
+    var breeds :[Breed]?
+    var id :String
+    var url :String?
+    var width: Int?
+    var height: Int?
     
+}
+
+struct Breed : Codable{
     var id :Int
     var name: String?
     var bred_for: String?

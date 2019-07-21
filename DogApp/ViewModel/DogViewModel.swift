@@ -43,7 +43,9 @@ class DogVIewModel{
                 switch response{
                 case .success(var result):
                     self.dogs.append(contentsOf: result.dogs)
-                    self.delegate?.reloadDogList(type: result.type!, page: self.CURRENT_PAGE)
+                    DispatchQueue.main.async {
+                      self.delegate?.reloadDogList(type: result.type!, page: self.CURRENT_PAGE)
+                    }
                     self.isLoading = false
                     break
                 case .failure:

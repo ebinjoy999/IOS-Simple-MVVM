@@ -25,7 +25,7 @@ class DogService: BaseService {
             }
             switch response{
             case .success(let result):
-                strongSelf.parseResult(result: result, completion: completion)
+                strongSelf.parseResult(listType, result: result, completion: completion)
                 break
             case .failure(let message, let statCode):
                  completion(.failure)
@@ -38,10 +38,11 @@ class DogService: BaseService {
         }
     }
     
-    private func parseResult(result: Data, completion: @escaping (DogDataResponse) -> Void) {
+    private func parseResult(_ listType: ListType,result: Data, completion: @escaping (DogDataResponse) -> Void) {
         var data:DogList?
         do{
             data = try DogList(json: result)
+            data?.type = listType
         }catch{
             completion(.failure)
             return

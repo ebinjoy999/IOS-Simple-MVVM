@@ -21,8 +21,13 @@ class BaseService{
     var uRLSessionArray: [String :URLSession] = [:]
     
     func callEndPoint(endPoint: String, method: String, params: JsonDictionay? = [:], completion: @escaping (ServiceResponse) -> Void){
-        let getURL = URL(string: AppConstant.BASE_URL + endPoint)!
-        var getRequest = URLRequest(url: getURL)
+        var getURL = URLComponents(string: AppConstant.BASE_URL + endPoint)!
+        getURL.queryItems = [
+            URLQueryItem(name: "limit", value: String(AppConstant.PAGE_LIMIT)),
+            URLQueryItem(name: "page", value: String(1)),
+            URLQueryItem(name: "order", value: "Desc")
+        ]
+        var getRequest = URLRequest(url: getURL.url!)
         getRequest.setValue("application/json", forHTTPHeaderField: "Accept")
 //        getRequest.setValue(AppConstant.API_KEY, forHTTPHeaderField: "x-api-key")
         switch method {
@@ -42,7 +47,7 @@ class BaseService{
             
             if error != nil {
                 self.failure(message: "Communication error", code: statusResonse, completion: completion)
-                self.uRLSessionArray.removeValue(forKey: getURL.absoluteString)
+                self.uRLSessionArray.removeValue(forKey: getURL.url!.absoluteString)
                 return
             }
             if data != nil {
@@ -57,10 +62,10 @@ class BaseService{
                    self.failure(message: "Received empty response", code: statusResonse, completion: completion)
                 })
             }
-            self.uRLSessionArray.removeValue(forKey: getURL.absoluteString)
+            self.uRLSessionArray.removeValue(forKey: getURL.url!.absoluteString)
             return
         }
-        uRLSessionArray[getURL.absoluteString] = urlSesssion
+        uRLSessionArray[getURL.url!.absoluteString] = urlSesssion
         task.resume()
     }
     

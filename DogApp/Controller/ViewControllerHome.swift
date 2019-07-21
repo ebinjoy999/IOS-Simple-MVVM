@@ -8,16 +8,43 @@
 
 import UIKit
 
-class ViewControllerHome: UIViewController {
-
+class ViewControllerHome: UIViewController, DogViewModelDelegate {
+    
+    @IBOutlet var tableViewDog: UITableView!
     var dogVIewModel: DogVIewModel?
+    var myActivityIndicator: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("asdqsad")
         dogVIewModel = DogVIewModel()
         dogVIewModel?.getDogList(type: .dogLIst)
+        
+        dogVIewModel?.delegate = self
+        tableViewDog.delegate = self
+        tableViewDog.dataSource = self
+        addFooterLoadingView()
     }
+    
+    
+    func addFooterLoadingView(){
+        let tableFooterView  = UIView(frame: CGRect(x: 0, y: 0, width: tableViewDog.frame.size.width, height: 75))
+        tableFooterView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+         myActivityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+        myActivityIndicator!.center = CGPoint(x: tableFooterView.frame.size.width  / 2,
+                                             y: tableFooterView.frame.size.height / 2)
+        myActivityIndicator!.hidesWhenStopped = false
+        tableFooterView.addSubview(myActivityIndicator!)
+        tableViewDog.tableFooterView = tableFooterView
+    }
+    
+    func reloadDogList(type: ListType, page: Int) {
+        tableViewDog?.reloadData()
+    }
+    
+    func showloading(_ isPagination: Bool) {
+        myActivityIndicator!.startAnimating()
+    }
+    
 
 }
 
