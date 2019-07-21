@@ -10,11 +10,14 @@ import UIKit
 
 class ViewControllerHome: UIViewController {
 
+    var dogVIewModel: DogVIewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        print("asdqsad")
+        dogVIewModel = DogVIewModel()
+        dogVIewModel?.getDogList(type: .dogLIst)
     }
-
 
 }
 

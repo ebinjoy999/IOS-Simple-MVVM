@@ -8,5 +8,15 @@
 
 import Foundation
 class DogList{
-    
+    var type: ListType?
+    var dogs: [Dog] = [Dog]()
+    init(json :Data) {
+        do {
+            let decoder = JSONDecoder()
+             let dogs = try decoder.decode([Dog].self, from: json)
+            self.dogs = dogs
+        } catch let parsingError {
+            print("Error", parsingError)
+        }
+    }
 }

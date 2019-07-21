@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum DogEndPint{
-     static let listBreeds = "breeds"
+enum DogEndPint :String{
+     case listBreeds = "breeds?limit=10&page=0"
 }

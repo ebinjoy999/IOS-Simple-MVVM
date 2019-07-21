@@ -22,6 +22,8 @@
 		251E2CFF22E414F20096FD22 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CFE22E414F20096FD22 /* AppConstant.swift */; };
 		251E2D0522E41D770096FD22 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D0422E41D770096FD22 /* BaseService.swift */; };
 		251E2D0722E41DAD0096FD22 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D0622E41DAD0096FD22 /* EndPoints.swift */; };
+		251E2D0A22E46D0D0096FD22 /* DogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D0922E46D0D0096FD22 /* DogService.swift */; };
+		251E2D0C22E46FAA0096FD22 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D0B22E46FAA0096FD22 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,9 @@
 		251E2CFE22E414F20096FD22 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		251E2D0422E41D770096FD22 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		251E2D0622E41DAD0096FD22 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		251E2D0922E46D0D0096FD22 /* DogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogService.swift; sourceTree = "<group>"; };
+		251E2D0B22E46FAA0096FD22 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		2596B78422E4C1D100BCB7B7 /* DogApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DogApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +116,7 @@
 		251E2CBD22E3CE530096FD22 /* DogApp */ = {
 			isa = PBXGroup;
 			children = (
+				2596B78422E4C1D100BCB7B7 /* DogApp.entitlements */,
 				251E2D0322E41C260096FD22 /* Services */,
 				251E2CFD22E414D80096FD22 /* Common */,
 				251E2CF222E3D92B0096FD22 /* resources */,
@@ -171,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				251E2CF722E3E67D0096FD22 /* DogViewModel.swift */,
+				251E2D0B22E46FAA0096FD22 /* BaseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -204,10 +211,19 @@
 		251E2D0322E41C260096FD22 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				251E2D0822E46CE70096FD22 /* Base */,
+				251E2D0922E46D0D0096FD22 /* DogService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		251E2D0822E46CE70096FD22 /* Base */ = {
+			isa = PBXGroup;
+			children = (
 				251E2D0422E41D770096FD22 /* BaseService.swift */,
 				251E2D0622E41DAD0096FD22 /* EndPoints.swift */,
 			);
-			path = Services;
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +294,11 @@
 				TargetAttributes = {
 					251E2CBA22E3CE530096FD22 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+						};
 					};
 					251E2CCE22E3CE530096FD22 = {
 						CreatedOnToolsVersion = 10.1;
@@ -345,6 +366,8 @@
 				251E2CFC22E3E6F80096FD22 /* Dog.swift in Sources */,
 				251E2CF422E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift in Sources */,
 				251E2CFA22E3E6EB0096FD22 /* DogList.swift in Sources */,
+				251E2D0A22E46D0D0096FD22 /* DogService.swift in Sources */,
+				251E2D0C22E46FAA0096FD22 /* BaseViewModel.swift in Sources */,
 				251E2CF822E3E67D0096FD22 /* DogViewModel.swift in Sources */,
 				251E2CBF22E3CE530096FD22 /* AppDelegate.swift in Sources */,
 				251E2D0722E41DAD0096FD22 /* EndPoints.swift in Sources */,
@@ -525,8 +548,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DogApp/DogApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5HTE388CP3;
 				INFOPLIST_FILE = "$(SRCROOT)/DogApp/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -542,8 +568,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DogApp/DogApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5HTE388CP3;
 				INFOPLIST_FILE = "$(SRCROOT)/DogApp/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
