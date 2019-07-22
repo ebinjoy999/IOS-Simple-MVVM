@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol DogViewModelDelegate {
     func reloadDogList(type: ListType, page: Int)
@@ -31,6 +32,11 @@ class DogVIewModel{
         isLoading = false
         dogs = [Dog]()
         self.delegate?.reloadDogList(type: .dogLIst, page: self.CURRENT_PAGE)
+    }
+    
+    func downloadImage(_ cgSize: CGSize,
+                       url :String, completion: @escaping (_ image: UIImage) -> ())  {
+        dogService!.downloadImage(cgSize, url: url, completion: completion)
     }
     
     func getDogList(type :ListType){

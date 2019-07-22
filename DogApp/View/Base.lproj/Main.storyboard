@@ -94,6 +94,7 @@
                                     <outlet property="dogBrred" destination="Lkt-tf-gdS" id="FzB-7R-5S3"/>
                                     <outlet property="dogLifeSapn" destination="S1A-kc-9R0" id="EOr-HJ-jMY"/>
                                     <outlet property="dogName" destination="BkB-r9-YZb" id="qB3-fi-AJt"/>
+                                    <outlet property="uiImage" destination="jvU-LD-X7c" id="0vD-Fl-oqU"/>
                                     <segue destination="PaU-Xd-UEL" kind="show" id="aR4-Lr-f4Z"/>
                                 </connections>
                             </tableViewCell>

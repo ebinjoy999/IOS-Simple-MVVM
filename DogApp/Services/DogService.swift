@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum  DogDataResponse {
     case success(result: DogList)
@@ -15,6 +16,25 @@ enum  DogDataResponse {
 
 class DogService: BaseService {
  var isLoadedAllItem  = false
+    
+    func downloadImage( _ cgSize: CGSize, url :String, completion: @escaping (_ image: UIImage) -> ()){
+        callEndPoint(download_mode: true, page: 0, endPoint: url, method: "GET") { [weak self]
+            (response) in
+            guard self != nil else {
+                return
+            }
+            switch response{
+            case .success(let result):
+                 let image = UIImage(data: result)
+                 completion(self!.resizeImage(image: image!, targetSize: cgSize))
+//                 imageView = UIImageView(image: image)
+                break
+            case .failure(let message, let statCode): break
+            case .notConnectedToInternet: break
+            }
+            
+        }
+    }
     
     func getDogList(listType: ListType, page:Int, completion: @escaping (DogDataResponse) -> Void ) {
         let endPoint = setEndPoint(type: listType)
@@ -52,6 +72,33 @@ class DogService: BaseService {
             return
         }
         completion(.success(result: data!))
+    }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+let a =        Int(UIScreen.main.scale)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale) //3d paarameter to map retina display
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
     
     private func setEndPoint(type: ListType) -> DogEndPint {
