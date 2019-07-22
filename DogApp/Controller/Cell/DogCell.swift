@@ -16,7 +16,7 @@ class DogCell: UITableViewCell{
     @IBOutlet weak var dogLifeSapn: UILabel!
     @IBOutlet weak var uiImage: UIImageView!
     
-    func loadData(_ viewModel:DogVIewModel, _ dog: Dog){
+    func loadData(_ viewModel:DogVIewModel, _ dog: Dog, _ tag:Int){
         
         if (dog.breeds?.count)! > 0 {
             dogName.text = dog.breeds![0].name?.capitalized
@@ -29,17 +29,19 @@ class DogCell: UITableViewCell{
         }
        
         if dog.url != nil{
-//            uiImage.tag =
-            viewModel.downloadImage(CGSize(width: uiImage.frame.width,
+            self.uiImage.tag = tag
+            viewModel.downloadImage(tag,CGSize(width: uiImage.frame.width,
                                            height: uiImage.frame.height),
                                     url: dog.url!, completion:{ [weak self]
-                (response) in
+                (response, row) in
                 guard self != nil else {
                 return
                 }
-                DispatchQueue.main.async {
-                    self?.uiImage.image = response
-                }
+                    DispatchQueue.main.async {
+                        if  self?.uiImage.tag == row {
+                          self?.uiImage.image = response
+                        }
+                    }
             })
         }
         uiImage.image = nil

@@ -27,6 +27,7 @@ class BaseService{
              var getURL = URLComponents(string: endPoint)!
              getRequest = URLRequest(url: getURL.url!)
         }else{
+            print("Page number:\(page)")
             var getURL = URLComponents(string: AppConstant.BASE_URL + endPoint)!
             getURL.queryItems = [
                 URLQueryItem(name: "limit", value: String(AppConstant.PAGE_LIMIT)),

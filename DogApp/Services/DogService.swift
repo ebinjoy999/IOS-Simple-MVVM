@@ -17,7 +17,7 @@ enum  DogDataResponse {
 class DogService: BaseService {
  var isLoadedAllItem  = false
     
-    func downloadImage( _ cgSize: CGSize, url :String, completion: @escaping (_ image: UIImage) -> ()){
+    func downloadImage( _ row :Int, _ cgSize: CGSize, url :String, completion: @escaping (_ image: UIImage,  _ row :Int) -> ()){
         callEndPoint(download_mode: true, page: 0, endPoint: url, method: "GET") { [weak self]
             (response) in
             guard self != nil else {
@@ -26,7 +26,7 @@ class DogService: BaseService {
             switch response{
             case .success(let result):
                  let image = UIImage(data: result)
-                 completion(self!.resizeImage(image: image!, targetSize: cgSize))
+                 completion(self!.resizeImage(image: image!, targetSize: cgSize), row)
 //                 imageView = UIImageView(image: image)
                 break
             case .failure(let message, let statCode): break

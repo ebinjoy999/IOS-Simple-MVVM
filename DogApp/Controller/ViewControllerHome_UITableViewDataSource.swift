@@ -18,7 +18,7 @@ extension ViewControllerHome: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:DogCell = self.tableViewDog.dequeueReusableCell(withIdentifier: "DogCell") as! DogCell
-        cell.loadData(dogVIewModel!,dogVIewModel!.dogs[indexPath.row])
+        cell.loadData(dogVIewModel!,dogVIewModel!.dogs[indexPath.row], indexPath.row)
         return cell
     }
     

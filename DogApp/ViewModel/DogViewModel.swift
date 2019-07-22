@@ -34,9 +34,9 @@ class DogVIewModel{
         self.delegate?.reloadDogList(type: .dogLIst, page: self.CURRENT_PAGE)
     }
     
-    func downloadImage(_ cgSize: CGSize,
-                       url :String, completion: @escaping (_ image: UIImage) -> ())  {
-        dogService!.downloadImage(cgSize, url: url, completion: completion)
+    func downloadImage( _ row :Int, _ cgSize: CGSize,
+                       url :String, completion: @escaping (_ image: UIImage, _  row :Int) -> ())  {
+        dogService!.downloadImage(row, cgSize, url: url, completion: completion)
     }
     
     func getDogList(type :ListType){
