@@ -18,14 +18,20 @@ enum ServiceResponse {
 
 class BaseService{
     
-    var uRLSessionArray: [String :URLSession] = [:]
+    var uRLSessionArray: [String :URLSessionDataTask] = [:]
+    
+    func  removeTask(key: String){
+         uRLSessionArray[key]?.cancel()
+         uRLSessionArray.removeValue(forKey: key)
+    }
     
     func callEndPoint(download_mode :Bool = false,page :Int, endPoint: String, method: String, params: JsonDictionay? = [:], completion: @escaping (ServiceResponse) -> Void){
-        
+        var key: String?
         var getRequest :URLRequest?
         if(download_mode){
              var getURL = URLComponents(string: endPoint)!
              getRequest = URLRequest(url: getURL.url!)
+             key = String(page)
         }else{
             print("Page number:\(page)")
             var getURL = URLComponents(string: AppConstant.BASE_URL + endPoint)!
@@ -44,6 +50,7 @@ class BaseService{
                 default:
                   break
             }
+           key = getRequest!.url!.absoluteString
         }
         let urlSesssion = URLSession.shared
         let task = urlSesssion.dataTask(with: getRequest!) { (data, response, error) -> Void in
@@ -54,7 +61,7 @@ class BaseService{
             
             if error != nil {
                 self.failure(message: "Communication error", code: statusResonse, completion: completion)
-                self.uRLSessionArray.removeValue(forKey: getRequest!.url!.absoluteString)
+                self.uRLSessionArray.removeValue(forKey: key!)
                 return
             }
             if data != nil {
@@ -69,16 +76,17 @@ class BaseService{
                    self.failure(message: "Received empty response", code: statusResonse, completion: completion)
                 })
             }
-            self.uRLSessionArray.removeValue(forKey: getRequest!.url!.absoluteString)
+            self.uRLSessionArray.removeValue(forKey: key!)
             return
         }
-        uRLSessionArray[getRequest!.url!.absoluteString] = urlSesssion
+        uRLSessionArray[key!] = task
+        let a = uRLSessionArray.count
         task.resume()
     }
     
     func cancelAllRequests () {
         for dataRequest in self.uRLSessionArray {
-            dataRequest.value.invalidateAndCancel()
+            dataRequest.value.cancel()
         }
         self.uRLSessionArray.removeAll()
     }

@@ -18,4 +18,10 @@ extension ViewControllerHome: UITableViewDelegate{
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
     }
+    
+    func tableView(_ tableView: UITableView,
+                   didEndDisplaying cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath){
+        dogVIewModel!.removedDogAt(row: indexPath.row)
+    }
 }

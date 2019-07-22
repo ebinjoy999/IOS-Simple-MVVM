@@ -38,6 +38,11 @@ class DogVIewModel{
                        url :String, completion: @escaping (_ image: UIImage, _  row :Int) -> ())  {
         dogService!.downloadImage(row, cgSize, url: url, completion: completion)
     }
+    func removedDogAt(row: Int){
+        //task when disappear row
+        dogService!.cancelDownloadImageTask(row: row)
+        
+    }
     
     func getDogList(type :ListType){
         guard let dogS = dogService else { return }

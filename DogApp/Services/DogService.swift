@@ -17,8 +17,12 @@ enum  DogDataResponse {
 class DogService: BaseService {
  var isLoadedAllItem  = false
     
+    func cancelDownloadImageTask(row: Int){
+        removeTask(key: String(row))
+    }
+    
     func downloadImage( _ row :Int, _ cgSize: CGSize, url :String, completion: @escaping (_ image: UIImage,  _ row :Int) -> ()){
-        callEndPoint(download_mode: true, page: 0, endPoint: url, method: "GET") { [weak self]
+        callEndPoint(download_mode: true, page: row, endPoint: url, method: "GET") { [weak self]
             (response) in
             guard self != nil else {
                 return
