@@ -135,20 +135,45 @@
             </objects>
             <point key="canvasLocation" x="-321" y="200"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="0f1-oi-Pwx">
             <objects>
-                <viewController id="PaU-Xd-UEL" sceneMemberID="viewController">
+                <viewController id="PaU-Xd-UEL" customClass="DetailViewController" customModule="DogApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gg8-WN-bCP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No title found!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3h-bu-eH7">
+                                <rect key="frame" x="117.5" y="104" width="140" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ccW-Ws-Hvm">
+                                <rect key="frame" x="40" y="168" width="295" height="257"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ccW-Ws-Hvm" secondAttribute="height" multiplier="295:257" id="Wxb-2J-Id0"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I3h-bu-eH7" firstAttribute="top" secondItem="Idb-4n-xCA" secondAttribute="top" constant="40" id="Ow6-3M-yQ5"/>
+                            <constraint firstItem="ccW-Ws-Hvm" firstAttribute="leading" secondItem="Idb-4n-xCA" secondAttribute="leading" constant="40" id="r8o-6S-hIy"/>
+                            <constraint firstItem="I3h-bu-eH7" firstAttribute="centerX" secondItem="Idb-4n-xCA" secondAttribute="centerX" id="shG-xj-J7n"/>
+                            <constraint firstItem="Idb-4n-xCA" firstAttribute="trailing" secondItem="ccW-Ws-Hvm" secondAttribute="trailing" constant="40" id="u2t-zQ-OGJ"/>
+                            <constraint firstItem="ccW-Ws-Hvm" firstAttribute="top" secondItem="I3h-bu-eH7" secondAttribute="bottom" constant="40" id="xN0-70-Lra"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Idb-4n-xCA"/>
                     </view>
+                    <connections>
+                        <outlet property="dogImageView" destination="ccW-Ws-Hvm" id="I27-JI-Zqh"/>
+                        <outlet property="titleLabel" destination="I3h-bu-eH7" id="jfS-Hc-TkU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7rk-lD-sVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1354" y="439"/>
+            <point key="canvasLocation" x="1265" y="199"/>
         </scene>
     </scenes>
     <resources>

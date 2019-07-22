@@ -22,7 +22,10 @@ class BaseService{
     
     func  removeTask(key: String){
          uRLSessionArray[key]?.cancel()
-         uRLSessionArray.removeValue(forKey: key)
+        if (uRLSessionArray[key] != nil){
+            uRLSessionArray.removeValue(forKey: key)
+            
+        }
     }
     
     func callEndPoint(download_mode :Bool = false,page :Int, endPoint: String, method: String, params: JsonDictionay? = [:], completion: @escaping (ServiceResponse) -> Void){
@@ -33,7 +36,7 @@ class BaseService{
              getRequest = URLRequest(url: getURL.url!)
              key = String(page)
         }else{
-            print("Page number:\(page)")
+            //print("Page number:\(page)")
             var getURL = URLComponents(string: AppConstant.BASE_URL + endPoint)!
             getURL.queryItems = [
                 URLQueryItem(name: "limit", value: String(AppConstant.PAGE_LIMIT)),

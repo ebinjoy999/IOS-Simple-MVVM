@@ -27,7 +27,8 @@ class DogCell: UITableViewCell{
             dogBrred.text = ""
             dogLifeSapn.text = ""
         }
-       
+        self.uiImage.isHidden = true
+        self.uiImage.image = nil
         if dog.url != nil{
             self.uiImage.tag = tag
             viewModel.downloadImage(tag,CGSize(width: uiImage.frame.width,
@@ -39,11 +40,11 @@ class DogCell: UITableViewCell{
                 }
                     DispatchQueue.main.async {
                         if  self?.uiImage.tag == row {
+                          self?.uiImage.isHidden = false
                           self?.uiImage.image = response
                         }
                     }
             })
         }
-        uiImage.image = nil
     }
 }

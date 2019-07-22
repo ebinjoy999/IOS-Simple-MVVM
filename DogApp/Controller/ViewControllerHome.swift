@@ -43,13 +43,22 @@ class ViewControllerHome: UIViewController, DogViewModelDelegate {
     }
     
     func showloading(_ isPagination: Bool) {
-        myActivityIndicator!.startAnimating()
+        DispatchQueue.main.async {
+            self.myActivityIndicator!.startAnimating()
+        }
     }
     
     func stopLoading(_ isPagination: Bool) {
-        myActivityIndicator!.stopAnimating()
+        DispatchQueue.main.async {
+            self.myActivityIndicator!.stopAnimating()
+        }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let index = tableViewDog.indexPathForSelectedRow?.row
+        var detailViewController = segue.destination as! DetailViewController
+        detailViewController.dataDog =  dogVIewModel?.dogs[index ??  0]
+    }
 
 }
 
