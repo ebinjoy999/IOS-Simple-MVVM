@@ -1,7 +1,8 @@
 
 # MVVM  with infinite scroll list
 
- **MVVM implementation with infinite scroll list,** a scratch app for creating beautiful applications with MVVM design pattern. 
+ **MVVM implementation with infinite scroll list,** a scratch app for creating beautiful applications with MVVM design pattern.
+ Download higher resolution image and load as thumbnail in listview.
  
  Take a look at the [Dog API](https://dog.ceo/dog-api/) used in project.
  
