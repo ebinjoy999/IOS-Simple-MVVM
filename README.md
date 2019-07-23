@@ -7,7 +7,7 @@
  
  **No 3rd party libraries used**
  
- Take a look at the [Dog API](https://dog.ceo/dog-api/) used in project.
+ Take a look at the [Dog API](https://thedogapi.com/) used in project.
  
 ![Swift 4.0+](https://img.shields.io/badge/Swift-4.0%2B-orange.svg)
 
