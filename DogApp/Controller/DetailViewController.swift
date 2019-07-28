@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
        // dogVIewModel = DogVIewModel()
-        if dataDog?.breeds?[0].name != nil{
+        if dataDog?.breeds?.count ?? -1  > 0 && dataDog?.breeds?[0].name != nil{
             titleLabel.text =  dataDog?.breeds?[0].name
         }
         if dataDog?.url != nil{

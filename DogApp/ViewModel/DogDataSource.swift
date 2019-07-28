@@ -15,6 +15,8 @@ class GenericDataSource<T> : NSObject {
 
 class DogDataSource : GenericDataSource<Dog>, UITableViewDataSource {
     
+     var dogVIewModel: DogVIewModel?
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.value.count
     }
@@ -23,7 +25,8 @@ class DogDataSource : GenericDataSource<Dog>, UITableViewDataSource {
         
         let cell:DogCell = tableView.dequeueReusableCell(withIdentifier: "DogCell") as! DogCell
         cell.dog = data.value[indexPath.row]
-       // cell.loadImageData(dogVIewModel!, indexPath.row)
+        
+        cell.loadImageData(dogVIewModel!, indexPath.row)
         return cell
     }
     

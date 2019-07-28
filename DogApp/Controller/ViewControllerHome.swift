@@ -23,7 +23,7 @@ class ViewControllerHome: UIViewController {
         super.viewDidLoad()
         tableViewDog.delegate = self
         tableViewDog.dataSource = dataSource
-        
+        dataSource.dogVIewModel = dogVIewModel
         dogVIewModel.getDogList(type: .dogLIst)
         addFooterLoadingView()
         
