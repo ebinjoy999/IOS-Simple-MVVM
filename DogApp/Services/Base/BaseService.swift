@@ -55,11 +55,20 @@ class BaseService{
             }
            key = getRequest!.url!.absoluteString
         }
+        if uRLSessionArray[key!] != nil  {return} //already working
         let urlSesssion = URLSession.shared
         let task = urlSesssion.dataTask(with: getRequest!) { (data, response, error) -> Void in
             var statusResonse = 0
             if let httpResponse = response as? HTTPURLResponse{
                 statusResonse =  httpResponse.statusCode
+            }
+            
+            
+            if let error = error as? NSError {
+                if error.code == NSURLErrorCancelled {
+                    // canceled by recycler
+                    return
+                }
             }
             
             if error != nil {
