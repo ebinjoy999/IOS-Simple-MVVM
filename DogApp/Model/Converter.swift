@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class DogList{
+struct Converter{
     var type: ListType?
     var dogs: [Dog] = [Dog]()
     init(json :Data) {

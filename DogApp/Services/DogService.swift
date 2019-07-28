@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-enum  DogDataResponse {
-    case success(result: DogList)
+enum  DataResponse {
+    case success(result: Converter)
     case failure
 }
 
@@ -40,7 +40,7 @@ class DogService: BaseService {
         }
     }
     
-    func getDogList(listType: ListType, page:Int, completion: @escaping (DogDataResponse) -> Void ) {
+    func getDogList(listType: ListType, page:Int, completion: @escaping (DataResponse) -> Void ) {
         let endPoint = setEndPoint(type: listType)
         callEndPoint(page: page, endPoint: endPoint.rawValue, method: "GET") { [weak self]
             (response) in
@@ -62,10 +62,10 @@ class DogService: BaseService {
         }
     }
     
-    private func parseResult(_ listType: ListType,result: Data, completion: @escaping (DogDataResponse) -> Void) {
-        var data:DogList?
+    private func parseResult(_ listType: ListType,result: Data, completion: @escaping (DataResponse) -> Void) {
+        var data:Converter?
         do{
-            data = try DogList(json: result)
+            data = try Converter(json: result)
             data?.type = listType
         }catch{
             completion(.failure)

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2506B74822EDB567005F536E /* DogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2506B74722EDB567005F536E /* DogDataSource.swift */; };
+		2506B74A22EDB979005F536E /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2506B74922EDB979005F536E /* DynamicValue.swift */; };
+		2506B74D22EDC111005F536E /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2506B74C22EDC111005F536E /* ErrorResult.swift */; };
+		2506B74F22EDC136005F536E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2506B74E22EDC136005F536E /* Result.swift */; };
 		251E2CBF22E3CE530096FD22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CBE22E3CE530096FD22 /* AppDelegate.swift */; };
 		251E2CC122E3CE530096FD22 /* ViewControllerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CC022E3CE530096FD22 /* ViewControllerHome.swift */; };
 		251E2CC422E3CE530096FD22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251E2CC222E3CE530096FD22 /* Main.storyboard */; };
@@ -15,9 +19,8 @@
 		251E2CD422E3CE530096FD22 /* DogAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CD322E3CE530096FD22 /* DogAppTests.swift */; };
 		251E2CDF22E3CE530096FD22 /* DogAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CDE22E3CE530096FD22 /* DogAppUITests.swift */; };
 		251E2CF422E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF322E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift */; };
-		251E2CF622E3E43F0096FD22 /* ViewControllerHome_UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF522E3E43F0096FD22 /* ViewControllerHome_UITableViewDataSource.swift */; };
 		251E2CF822E3E67D0096FD22 /* DogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF722E3E67D0096FD22 /* DogViewModel.swift */; };
-		251E2CFA22E3E6EB0096FD22 /* DogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF922E3E6EB0096FD22 /* DogList.swift */; };
+		251E2CFA22E3E6EB0096FD22 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CF922E3E6EB0096FD22 /* Converter.swift */; };
 		251E2CFC22E3E6F80096FD22 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CFB22E3E6F80096FD22 /* Dog.swift */; };
 		251E2CFF22E414F20096FD22 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2CFE22E414F20096FD22 /* AppConstant.swift */; };
 		251E2D0522E41D770096FD22 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E2D0422E41D770096FD22 /* BaseService.swift */; };
@@ -47,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2506B74722EDB567005F536E /* DogDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDataSource.swift; sourceTree = "<group>"; };
+		2506B74922EDB979005F536E /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
+		2506B74C22EDC111005F536E /* ErrorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
+		2506B74E22EDC136005F536E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		251E2CBB22E3CE530096FD22 /* DogApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		251E2CBE22E3CE530096FD22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		251E2CC022E3CE530096FD22 /* ViewControllerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome.swift; sourceTree = "<group>"; };
@@ -59,9 +66,8 @@
 		251E2CDA22E3CE530096FD22 /* DogAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		251E2CDE22E3CE530096FD22 /* DogAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAppUITests.swift; sourceTree = "<group>"; };
 		251E2CF322E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome_UITableViewDelegate.swift; sourceTree = "<group>"; };
-		251E2CF522E3E43F0096FD22 /* ViewControllerHome_UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome_UITableViewDataSource.swift; sourceTree = "<group>"; };
 		251E2CF722E3E67D0096FD22 /* DogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewModel.swift; sourceTree = "<group>"; };
-		251E2CF922E3E6EB0096FD22 /* DogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogList.swift; sourceTree = "<group>"; };
+		251E2CF922E3E6EB0096FD22 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		251E2CFB22E3E6F80096FD22 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		251E2CFE22E414F20096FD22 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		251E2D0422E41D770096FD22 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -99,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2506B74B22EDC105005F536E /* result */ = {
+			isa = PBXGroup;
+			children = (
+				2506B74C22EDC111005F536E /* ErrorResult.swift */,
+				2506B74E22EDC136005F536E /* Result.swift */,
+			);
+			path = result;
+			sourceTree = "<group>";
+		};
 		251E2CB222E3CE530096FD22 = {
 			isa = PBXGroup;
 			children = (
@@ -164,8 +179,9 @@
 		251E2CEE22E3D8B90096FD22 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				251E2CF922E3E6EB0096FD22 /* DogList.swift */,
+				251E2CF922E3E6EB0096FD22 /* Converter.swift */,
 				251E2CFB22E3E6F80096FD22 /* Dog.swift */,
+				2506B74922EDB979005F536E /* DynamicValue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +201,7 @@
 			children = (
 				251E2CF722E3E67D0096FD22 /* DogViewModel.swift */,
 				251E2D0B22E46FAA0096FD22 /* BaseViewModel.swift */,
+				2506B74722EDB567005F536E /* DogDataSource.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -195,7 +212,6 @@
 				25424D2222E4F0D00010FBB6 /* Cell */,
 				251E2CC022E3CE530096FD22 /* ViewControllerHome.swift */,
 				251E2CF322E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift */,
-				251E2CF522E3E43F0096FD22 /* ViewControllerHome_UITableViewDataSource.swift */,
 				25424D2522E503CC0010FBB6 /* ViewControllerHome_UIScrollViewDelegate.swift */,
 				25424D2822E5C63F0010FBB6 /* DetailViewController.swift */,
 			);
@@ -221,6 +237,7 @@
 		251E2D0322E41C260096FD22 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2506B74B22EDC105005F536E /* result */,
 				251E2D0822E46CE70096FD22 /* Base */,
 				251E2D0922E46D0D0096FD22 /* DogService.swift */,
 			);
@@ -387,18 +404,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2506B74F22EDC136005F536E /* Result.swift in Sources */,
 				25424D2422E4F0E70010FBB6 /* DogCell.swift in Sources */,
 				251E2CC122E3CE530096FD22 /* ViewControllerHome.swift in Sources */,
 				251E2CFC22E3E6F80096FD22 /* Dog.swift in Sources */,
+				2506B74822EDB567005F536E /* DogDataSource.swift in Sources */,
 				251E2CF422E3E41D0096FD22 /* ViewControllerHome_UITableViewDelegate.swift in Sources */,
-				251E2CFA22E3E6EB0096FD22 /* DogList.swift in Sources */,
+				251E2CFA22E3E6EB0096FD22 /* Converter.swift in Sources */,
 				251E2D0A22E46D0D0096FD22 /* DogService.swift in Sources */,
 				251E2D0C22E46FAA0096FD22 /* BaseViewModel.swift in Sources */,
 				251E2CF822E3E67D0096FD22 /* DogViewModel.swift in Sources */,
 				25424D2622E503CC0010FBB6 /* ViewControllerHome_UIScrollViewDelegate.swift in Sources */,
+				2506B74A22EDB979005F536E /* DynamicValue.swift in Sources */,
+				2506B74D22EDC111005F536E /* ErrorResult.swift in Sources */,
 				251E2CBF22E3CE530096FD22 /* AppDelegate.swift in Sources */,
 				251E2D0722E41DAD0096FD22 /* EndPoints.swift in Sources */,
-				251E2CF622E3E43F0096FD22 /* ViewControllerHome_UITableViewDataSource.swift in Sources */,
 				25424D2922E5C63F0010FBB6 /* DetailViewController.swift in Sources */,
 				251E2CFF22E414F20096FD22 /* AppConstant.swift in Sources */,
 				251E2D0522E41D770096FD22 /* BaseService.swift in Sources */,

@@ -17,7 +17,7 @@ extension ViewControllerHome : UIScrollViewDelegate {
         let scrollPosition = scrollView.contentOffset.y
         if scrollPosition > bottom - buffer {
             // Add more datas to the bottom
-            dogVIewModel?.getDogList(type: .dogLIst)
+            dogVIewModel.getDogList(type: .dogLIst)
         }
     }
     

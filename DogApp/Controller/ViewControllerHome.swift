@@ -8,22 +8,34 @@
 
 import UIKit
 
-class ViewControllerHome: UIViewController, DogViewModelDelegate {
+class ViewControllerHome: UIViewController {
     
     @IBOutlet var tableViewDog: UITableView!
-    var dogVIewModel: DogVIewModel?
     var myActivityIndicator: UIActivityIndicatorView?
+    let dataSource = DogDataSource()
+    
+    lazy var dogVIewModel: DogVIewModel = {
+        let viewModel = DogVIewModel(dataSource: dataSource)
+        return viewModel
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dogVIewModel = DogVIewModel()
-        dogVIewModel?.resetItem()
-        dogVIewModel?.getDogList(type: .dogLIst)
-        
-        dogVIewModel?.delegate = self
         tableViewDog.delegate = self
-        tableViewDog.dataSource = self
+        tableViewDog.dataSource = dataSource
+        
+        dogVIewModel.getDogList(type: .dogLIst)
         addFooterLoadingView()
+        
+        self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
+            self!.reloadDogList(type: .dogLIst , page: 0)
+        }
+        
+        self.dogVIewModel.onErrorHandling = { [weak self] error in
+            let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            self?.present(controller, animated: true, completion: nil)
+        }
     }
     
     
@@ -39,7 +51,9 @@ class ViewControllerHome: UIViewController, DogViewModelDelegate {
     }
     
     func reloadDogList(type: ListType, page: Int) {
-        tableViewDog?.reloadData()
+         DispatchQueue.main.async {
+            self.tableViewDog?.reloadData()
+        }
     }
     
     func showloading(_ isPagination: Bool) {
@@ -57,7 +71,7 @@ class ViewControllerHome: UIViewController, DogViewModelDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let index = tableViewDog.indexPathForSelectedRow?.row
         var detailViewController = segue.destination as! DetailViewController
-        detailViewController.dataDog =  dogVIewModel?.dogs[index ??  0]
+        detailViewController.dataDog =  dogVIewModel.dataSource?.data.value[index ??  0]
     }
 
 }

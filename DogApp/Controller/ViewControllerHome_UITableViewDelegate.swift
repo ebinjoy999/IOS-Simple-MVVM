@@ -22,6 +22,6 @@ extension ViewControllerHome: UITableViewDelegate{
     func tableView(_ tableView: UITableView,
                    didEndDisplaying cell: UITableViewCell,
                    forRowAt indexPath: IndexPath){
-        dogVIewModel!.removedDogAt(row: indexPath.row)
+        dogVIewModel.removedDogAt(row: indexPath.row)
     }
 }

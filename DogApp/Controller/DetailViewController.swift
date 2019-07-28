@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
     var dogVIewModel: DogVIewModel?
     
     override func viewDidLoad() {
-        dogVIewModel = DogVIewModel()
+       // dogVIewModel = DogVIewModel()
         if dataDog?.breeds?[0].name != nil{
             titleLabel.text =  dataDog?.breeds?[0].name
         }
